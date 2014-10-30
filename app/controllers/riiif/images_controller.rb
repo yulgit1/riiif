@@ -13,7 +13,8 @@ module Riiif
           raise
         end
       end
-      data = image.render(params.permit(:region, :size, :rotation, :quality, :format))
+      #data = image.render(params.permit(:region, :size, :rotation, :quality, :format))
+      data = image.render(params)
       send_data data, status: status, type: Mime::Type.lookup_by_extension(params[:format]), :disposition => 'inline'
     end
 
@@ -28,7 +29,7 @@ module Riiif
 
     protected
 
-    LEVEL2 = 'http://library.stanford.edu/iiif/image-api/1.1/compliance.html#level1'
+    LEVEL2 = 'http://library.stanford.edu/iiif/image-api/1.1/compliance.html#level2'
 
     def link_header
       response.headers["Link"] = "<#{LEVEL2}>;rel=\"profile\""
