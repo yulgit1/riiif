@@ -32,6 +32,7 @@ module Riiif
 
     def link_header
       response.headers["Link"] = "<#{LEVEL2}>;rel=\"profile\""
+      response.headers["Access-Control-Allow-Origin"] = "*"
     end
 
     def server_info
