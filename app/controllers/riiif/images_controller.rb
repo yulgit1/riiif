@@ -28,7 +28,7 @@ module Riiif
 
     protected
 
-    LEVEL2 = 'http://library.stanford.edu/iiif/image-api/1.1/compliance.html#level2'
+    LEVEL2 = 'http://library.stanford.edu/iiif/image-api/1.1/compliance.html#level1'
 
     def link_header
       response.headers["Link"] = "<#{LEVEL2}>;rel=\"profile\""
