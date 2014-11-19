@@ -10,7 +10,8 @@ module Riiif
 	
     #self.pathroot = "/usr/local/fedora/data/datastreamStore/"
     mattr_accessor :pathroot, :imagetype, :akubraconfig
-	self.pathroot = "/hydra_store/fedora/fedora_tomcat/fedora_data/datastreamStore_dest/"
+	#self.pathroot = "/hydra_store/fedora/fedora_tomcat/fedora_data/datastreamStore_dest/"
+	self.pathroot = "/hydra_store/fedora/fedora_tomcat/fedora_data/datastreamStore_dest/fakedefault"
     self.imagetype = "jp2"
 	self.akubraconfig = [[0,2],[2,2],[4,1]]
 
