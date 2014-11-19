@@ -3,10 +3,9 @@ require 'cgi'
 module Riiif
   module AkubraSystemFileResolver
     mattr_accessor :pathroot, :imagetype, :akubraconfig
-	self.pathroot = "/yourfedora/data/datastreamStore/"
+    self.pathroot = "/yourfedora/data/datastreamStore/"
     self.imagetype = "jp2"
-	self.akubraconfig = [[0,2],[2,2],[4,1]]
-
+    self.akubraconfig = [[0,2],[2,2],[4,1]]
 
     def self.find(id)
       Riiif::File.new(path(id))
@@ -22,12 +21,11 @@ module Riiif
       md5 = Digest::MD5.new
       md5.update fullpid
       digest = md5.hexdigest
-	  directorystr = ""
-	  akubraconfig.each { |a| directorystr << digest[a[0],a[1]] << "/" }
+      directorystr = ""
+      akubraconfig.each { |a| directorystr << digest[a[0],a[1]] << "/" }
       filename = CGI.escape(fullpid)
       fullpath = pathroot + directorystr + filename
       fullpath	  
     end
-
   end
 end
